@@ -1,0 +1,124 @@
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
+/**
+ * @Pasajero interactua con el reservador
+ * @asiento recibe la posicion del asiento
+ * @vuelto hace el pago
+ **/
+public class Pasajero extends JPanel{
+    /*
+    private Bus producto, Pcomparacion;
+    private Expendedor exp;
+     */
+    private DepositoM vuelto;
+    private String sonido;
+    private int valorvuelto = 0;
+    private int escala;
+    private int countm100, countm500, countb1000;
+    public Pasajero(Expendedor exp, int escala){
+        countm100 = 0;countm500 = 0;countb1000 = 0;
+        vuelto = new DepositoM();
+        this.escala = escala;
+        //Asiento = new NoAsiento(0,0,0,0);Bcomparacion = new NoAsiento(0,0,0,0);
+
+        //this.exp = exp;
+    }
+    public void getVuelto(){
+        while (true) {
+            Moneda m = exp.getVuelto();
+            if (m == null) break;
+            vuelto.addMoneda(m);
+        }
+
+        for (int i = 0; i < vuelto.check(); i++) {
+            Moneda m = vuelto.getMoneda();
+            valorvuelto = valorvuelto + m.getValor();
+            vuelto.addMoneda(m);
+        }
+        countm100 = countm100 + exp.getcountm100();
+        countm500 = countm500 + exp.getcountm500();
+        countb1000 = countb1000 + exp.getcountb1000();
+        exp.setcountm100(0);
+        exp.setcountm500(0);
+        exp.setcountb1000(0);
+    }
+    //public Producto getProducto(){ return producto; }
+    public Moneda getMonedabyValor(Moneda m) throws NohayMonedaException{
+
+        if (m.getValor() == 1000){
+            if (countb1000 == 0) throw new NohayMonedaException("No Posee Billetes de 1000");
+            else countb1000 = countb1000 - 1;
+
+        }else{
+            if (m.getValor() == 500){
+                if (countm500==0) throw new NohayMonedaException("No Posee monedas de 500");
+                else countm500 = countm500-1;
+
+            }else{
+                if (m.getValor()==100){
+
+                    if (countm100==0) throw new NohayMonedaException("No Posee monedas de 100");
+                    else countm100 = countm100-1;
+                }
+            }
+        }
+        for (int i = 0; i < vuelto.check(); i++) {
+            if (vuelto.getMonedain(i).getClass().getName().equals(m.getClass().getName())) {
+                return vuelto.takeMonedain(i);
+            }
+        }
+        throw new NohayMonedaException("No encontro monedas");
+    }
+    public int getcountm100(){return countm100;}
+    public int getcountm500(){return countm500;}
+    public int getcountb1000(){return countb1000;}
+    public void comprarAsiento(int pos) throws NoHayProductoException, PagoIncorrectoException, PagoInsuficienteException, YaComproException, ProductoNoDisponibleExcepcion {
+        exp.comprarProducto(pos);
+    }
+    public Moneda getMonedaby(Moneda m){
+        for (int i = 0; i < vuelto.check(); i++) {
+            if (vuelto.getMonedain(i).getClass().getName().equals(m.getClass().getName())) {
+                return vuelto.getMonedain(i);
+            }
+        }
+        return m;
+    }
+    /*
+    public void recojePasaje() throws NoHayProductoException{
+        producto = exp.getProducto();
+        sonido = producto.consumir();
+    }
+
+    */
+    public String queAsiento(){
+        asiento = new NoAsiento(0,0,0,0);
+        return(pos);
+    }
+    /*
+    public boolean ProductoEnCom(){
+        if (!producto.getClass().getName().equals(Pcomparacion.getClass().getName())) return true;
+        else return false;
+    }
+
+     */
+    @Override
+    public void paint(Graphics g){
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillRoundRect(27*escala/8, escala/4, 3*escala/8, escala/2, 3*escala/16, 3*escala/16);
+        g.fillRoundRect(3*escala, 7*escala/8, 3*escala/4, 3*escala/2, 3*escala/16, 3*escala/16);
+        /*
+        if (producto.getClass().getName() != Pcomparacion.getClass().getName()) {
+            producto.changeLocation(111*escala/32, 3*escala/8);producto.paint(g);
+        }
+
+        */
+        g.setColor(Color.black);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 2*escala/16));
+        g.drawString( "X" + Integer.toString(countm100), 27*escala/8, 10*escala/8);
+        g.drawString( "X" + Integer.toString(countm500), 27*escala/8, 13*escala/8);
+        g.drawString( "X" + Integer.toString(countb1000), 27*escala/8, 16*escala/8);
+    }
+}

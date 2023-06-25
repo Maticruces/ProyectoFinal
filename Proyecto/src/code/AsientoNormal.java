@@ -1,3 +1,4 @@
+package code;
 public class AsientoNormal extends Asiento {
     private int precio;
 

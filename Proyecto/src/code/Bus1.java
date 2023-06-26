@@ -5,7 +5,7 @@ public class Bus1 extends Bus{
 
     }
 
-    public void AgregarAsientos(int numAsientoNormal, int numAsientoPremium, int numAsientoVIP, int precioAsientoNormal, int precioAsientoPremium, int precioAsientoVIP){
+    public void agregarAsientos(int numAsientoNormal, int numAsientoPremium, int numAsientoVIP, int precioAsientoNormal, int precioAsientoPremium, int precioAsientoVIP){
 
         for (int i = 0; i < numAsientoNormal; i++) {
             AsientoNormal asientito = new AsientoNormal(precioAsientoNormal);

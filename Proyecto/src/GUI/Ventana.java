@@ -1,4 +1,5 @@
 package GUI;
+import code.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,5 +33,12 @@ public class Ventana extends JFrame{
     }
 
     public void crearGUI() {
+        Panel panel = new Panel(escala);
+        add(panel);
+        Panel panel2 = new Panel(escala);
+        Bus[] buses = new Bus[2];
+        SelectorBus selectorBus = new SelectorBus(buses);
+        panel.add(selectorBus);
+        add(panel2);
     }
 }

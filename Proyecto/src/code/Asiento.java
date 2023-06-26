@@ -1,3 +1,4 @@
+package code;
 public class Asiento {
     private boolean status;
     private int serie;

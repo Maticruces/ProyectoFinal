@@ -12,7 +12,6 @@ public class SelectorBus extends JPanel {
     private JButton button;
 
     public SelectorBus(Bus[] buses) {
-        setLayout(new FlowLayout());
 
         String[] busNames = new String[buses.length];
         for (int i = 0; i < buses.length; i++) {
@@ -20,6 +19,7 @@ public class SelectorBus extends JPanel {
         }
 
         comboBox = new JComboBox<>(busNames);
+        comboBox.setBounds(200,200,20,20);
         add(comboBox);
 
         button = new JButton("Seleccionar");
@@ -36,5 +36,10 @@ public class SelectorBus extends JPanel {
             }
         });
         add(button);
+
+
+
+
     }
+
 }

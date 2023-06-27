@@ -3,10 +3,7 @@ import code.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /*
 *@Ventana es una clase donde se reciben las interacciones entre metodos y funciones
@@ -27,7 +24,7 @@ public class Ventana extends JFrame{
         setLocationRelativeTo(null);
         setLayout(null);
 
-        this.setResizable(false);
+        this.setResizable(true);
         crearGUI();
         setVisible(true);
     }
@@ -35,10 +32,12 @@ public class Ventana extends JFrame{
     public void crearGUI() {
         Panel panel = new Panel(escala);
         add(panel);
-        Panel panel2 = new Panel(escala);
-        Bus[] buses = new Bus[2];
-        SelectorBus selectorBus = new SelectorBus(buses);
-        panel.add(selectorBus);
-        add(panel2);
+        setBounds(0,0,700,600);
+        panel.setBounds(0,0,700,90);
+        PanelAsientosBus asientosBus = new PanelAsientosBus();
+        add(asientosBus);
+        asientosBus.setBounds(0,100,700,900);
+
+
     }
 }

@@ -6,7 +6,7 @@ public class Bus {
     private ArrayList<Asiento> asientosBus;
 
     public Bus(){
-        asientosBus = new ArrayList<>();
+        asientosBus = new ArrayList<Asiento>();
     }
     public void addAsiento(Asiento asiento){
         asientosBus.add(asiento);
@@ -19,5 +19,6 @@ public class Bus {
             return null;
         }
     }
+
 
 }

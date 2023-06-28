@@ -16,10 +16,6 @@ public class PanelAsientosBus extends JPanel {
         asientos1.setBounds(0,0,100,370);
         add(asientos1);
 
-        //JLabel pasillo = new JLabel(new ImageIcon("C:\\Users\\Pc\\Desktop\\Nueva carpeta\\ProyectoFinal\\Proyecto\\src\\imagenes\\17538.jpg"));
-       // pasillo.setBounds(100,0,100,348);
-        //add(pasillo);
-
         asientos2.setBounds(200,0,100,370);
         add(asientos2);
 

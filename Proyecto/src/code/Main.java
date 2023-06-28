@@ -11,9 +11,5 @@ public class Main{
 
         Ventana v = new Ventana(); //única sentencia
 
-        Bus1 micro = new Bus1();
-        micro.agregarAsientos(5,2,1, 1000,1500,3000);
-        System.out.println(micro.getAsiento(0).getStatus());
-
     }
 }

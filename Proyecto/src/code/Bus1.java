@@ -1,8 +1,11 @@
 package code;
 
 public class Bus1 extends Bus{
-    public Bus1(){
+    private Recorridos origen;
+    private Recorridos destino;
 
+    public Bus1(Recorridos origen, Recorridos destino){
+        this.origen = origen;
     }
 
     public void agregarAsientos(int numAsientoNormal, int numAsientoPremium, int numAsientoVIP, int precioAsientoNormal, int precioAsientoPremium, int precioAsientoVIP){

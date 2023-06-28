@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class PanelAsientos extends JPanel {
     private JButton[] botones;
-    private JButton[] botones2;
+
     public PanelAsientos(int n){
         setLayout(new GridLayout(6, 2));
         botones = new JButton[24];

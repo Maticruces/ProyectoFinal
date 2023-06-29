@@ -29,6 +29,7 @@ public class SelectorBus extends JPanel {
                     // Hacer algo con el bus seleccionado
                     Bus selectedBus = buses[selectedIndex];
                     System.out.println("Bus seleccionado: " + selectedBus);
+                    PanelAsientosBus asientitosss = new PanelAsientosBus();
                 } else {
                     System.out.println("No se ha seleccionado un bus válido.");
                 }

@@ -1,8 +1,7 @@
 package GUI;
-import code.Bus;
+import code.*;
 
 import java.awt.*;
-import java.nio.channels.SeekableByteChannel;
 import javax.swing.JPanel;
 
 /*

@@ -1,14 +1,13 @@
 package GUI;
 
-import javax.swing.*;
-
+import code.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PanelRecorrido extends JPanel {
-    private JComboBox<String> origenComboBox;
-    private JComboBox<String> destinoComboBox;
+public class PanelRecorrido extends JPanel implements ActionListener {
+    private JComboBox<Recorridos> origenComboBox;
+    private JComboBox<Recorridos> destinoComboBox;
     private JComboBox<String> horarioComboBox;
     private JButton buscar;
 
@@ -16,58 +15,56 @@ public class PanelRecorrido extends JPanel {
         JLabel origenLabel = new JLabel("Origen:");
         add(origenLabel);
 
-        origenComboBox = new JComboBox<String>();
-        origenComboBox.addItem("Concepción");
-        origenComboBox.addItem("Santiago");
-        origenComboBox.addItem("Valparaiso");
-        origenComboBox.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String origenSeleccionado = (String) origenComboBox.getSelectedItem();
-                String destinoSeleccionado = (String) destinoComboBox.getSelectedItem();
-
-                if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado.equals(destinoSeleccionado)) {
-                    // Si se selecciona la misma ciudad como origen y destino, se deshabilita la opción en el combo de destino
-                    destinoComboBox.setSelectedIndex(-1);
-                }
-            }
-        });
+        origenComboBox = new JComboBox<>(Recorridos.values());
+        origenComboBox.setSelectedIndex(-1);
+        origenComboBox.addActionListener(this);
         add(origenComboBox);
+
 
         JLabel destinoLabel = new JLabel("Destino:");
         add(destinoLabel);
-        destinoComboBox = new JComboBox<String>();
-        destinoComboBox.addItem("Concepción");
-        destinoComboBox.addItem("Santiago");
-        destinoComboBox.addItem("Valparaiso");
-        destinoComboBox.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String origenSeleccionado = (String) origenComboBox.getSelectedItem();
-                String destinoSeleccionado = (String) destinoComboBox.getSelectedItem();
+        destinoComboBox = new JComboBox<>(Recorridos.values());
+        destinoComboBox.setSelectedIndex(-1);
 
-                if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado.equals(destinoSeleccionado)) {
-                    // Si se selecciona la misma ciudad como origen y destino, se deshabilita la opción en el combo de origen
-                    origenComboBox.setSelectedIndex(-1);
-                }
-            }
-        });
+        destinoComboBox.addActionListener(this);
         add(destinoComboBox);
 
-        JLabel horario = new JLabel("Horario:");
+        JLabel horario = new JLabel("Horario salida - llegada:");
         add(horario);
 
-        horarioComboBox = new JComboBox<String>();
-        horarioComboBox.addItem("Salida: 13:00 - Llegada: 15:00");
-        horarioComboBox.addItem("Salida: 15:00 - Llegada: 17:00");
-        horarioComboBox.addItem("Salida: 17:00 - Llegada: 19:00");
+        horarioComboBox = new JComboBox<>();
+        horarioComboBox.addItem("13:00 - 15:00");
+        horarioComboBox.addItem("15:00 - 17:00");
+        horarioComboBox.addItem("17:00 - 19:00");
         add(horarioComboBox);
 
         buscar = new JButton("buscar");
-        buscar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Buscando...");
-            }
-        });
+        horarioComboBox.setSelectedIndex(-1);
+        buscar.addActionListener(this);
         add(buscar);
     }
-}
 
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == origenComboBox) {
+            Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
+            Recorridos destinoSeleccionado = (Recorridos) destinoComboBox.getSelectedItem();
+            if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado.equals(destinoSeleccionado)) {
+                destinoComboBox.setSelectedIndex(-1);
+            }
+        } else if (e.getSource() == destinoComboBox) {
+            Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
+            Recorridos destinoSeleccionado = (Recorridos) destinoComboBox.getSelectedItem();
+            if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado.equals(destinoSeleccionado)) {
+                origenComboBox.setSelectedIndex(-1);
+            }
+        } else if (e.getSource() == buscar) {
+            Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
+            Recorridos destinoSeleccionado = (Recorridos) destinoComboBox.getSelectedItem();
+            if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado == Recorridos.CONCEPCION && destinoSeleccionado == Recorridos.VALPARAISO) {
+                System.out.println("Correcto");
+            } else {
+                System.out.println("Error");
+            }
+        }
+    }
+}

@@ -6,11 +6,22 @@ public class BusDisponible {
     private ArrayList<Bus> buses;
 
     public BusDisponible(){
+        Horarios horario = new Horarios();
         buses = new ArrayList<>();
-        Bus1 bus1 = new Bus1(Recorridos.CONCEPCION, Recorridos.SANTIAGO);
-        addBus(bus1);
 
+        for (Recorridos origen:Recorridos.values()) {
+            for (Recorridos destino : Recorridos.values()) {
+                for (int i = 1; i < 4 ; i++) {
+                    Bus1 bus1 = new Bus1(origen, destino, (horario.Horario(i)));
+                    addBus(bus1);
+                    Bus2 bus2 = new Bus2(origen, destino, (horario.Horario(i)));
+                    addBus(bus2);
+
+                }
+            }
+        }
     }
+
     public void addBus(Bus bus){
         buses.add(bus);
     }

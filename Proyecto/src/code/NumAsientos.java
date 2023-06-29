@@ -1,6 +1,0 @@
-package code;
-
-public enum NumAsientos {
-    NUMASIENTOSNORMALES, NUMEROASIENTOSVIP, NUMEROASIENTOSPREMIUM;
-
-}

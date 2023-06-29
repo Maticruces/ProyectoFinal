@@ -29,13 +29,13 @@ public class PanelRecorrido extends JPanel implements ActionListener {
         destinoComboBox.addActionListener(this);
         add(destinoComboBox);
 
-        JLabel horario = new JLabel("Horario salida - llegada:");
+        JLabel horario = new JLabel("Horario: ");
         add(horario);
 
         horarioComboBox = new JComboBox<>();
-        horarioComboBox.addItem("13:00 - 15:00");
-        horarioComboBox.addItem("15:00 - 17:00");
-        horarioComboBox.addItem("17:00 - 19:00");
+        horarioComboBox.addItem("Salida: 13:00 - Llegada: 15:00");
+        horarioComboBox.addItem("Salida: 15:00 - Llegada: 17:00");
+        horarioComboBox.addItem("Salida: 17:00 - Llegada: 19:00");
         add(horarioComboBox);
 
         buscar = new JButton("buscar");

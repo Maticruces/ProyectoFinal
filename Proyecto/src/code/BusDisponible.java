@@ -49,5 +49,12 @@ public class BusDisponible {
     public ArrayList<Bus> getBusesDisponibles(){
         return busesDisponibles;
     }
+    public Bus getBusDisponible(int indice){
+        if (indice >= 0 && indice < busesDisponibles.size()) {
+            return busesDisponibles.get(indice);
+        } else {
+            return null;
+        }
+    }
 
 }

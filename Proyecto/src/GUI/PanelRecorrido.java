@@ -1,6 +1,9 @@
 package GUI;
 
-import code.*;
+import code.BusDisponible;
+import code.Comprador;
+import code.Recorridos;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,10 +14,14 @@ public class PanelRecorrido extends JPanel implements ActionListener {
     private JComboBox<String> horarioComboBox;
     private JButton buscar;
     private Comprador comprador;
+    private BusDisponible busDisponible;
+    private SelectorBus selectorBus;
 
-
-    public PanelRecorrido(Comprador comprador) {
+    public PanelRecorrido(Comprador comprador, BusDisponible busDisponible, SelectorBus selectorBus) {
         this.comprador = comprador;
+        this.busDisponible = busDisponible;
+        this.selectorBus = selectorBus;
+
         JLabel origenLabel = new JLabel("Origen:");
         add(origenLabel);
 
@@ -23,12 +30,10 @@ public class PanelRecorrido extends JPanel implements ActionListener {
         origenComboBox.addActionListener(this);
         add(origenComboBox);
 
-
         JLabel destinoLabel = new JLabel("Destino:");
         add(destinoLabel);
         destinoComboBox = new JComboBox<>(Recorridos.values());
         destinoComboBox.setSelectedIndex(-1);
-
         destinoComboBox.addActionListener(this);
         add(destinoComboBox);
 
@@ -61,7 +66,6 @@ public class PanelRecorrido extends JPanel implements ActionListener {
         } else if (e.getSource() == destinoComboBox) {
             comprador.setDestino((Recorridos) destinoComboBox.getSelectedItem());
 
-
             Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
             Recorridos destinoSeleccionado = (Recorridos) destinoComboBox.getSelectedItem();
             if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado.equals(destinoSeleccionado)) {
@@ -70,7 +74,7 @@ public class PanelRecorrido extends JPanel implements ActionListener {
         } else if (e.getSource() == buscar) {
             comprador.setOrigen((Recorridos) origenComboBox.getSelectedItem());
             comprador.setDestino((Recorridos) destinoComboBox.getSelectedItem());
-            //AÑADIR EXCEPCIONES EN CASO DE NULL
+            // AÑADIR EXCEPCIONES EN CASO DE NULL
             comprador.setHorario((String) horarioComboBox.getSelectedItem());
 
             Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
@@ -87,6 +91,8 @@ public class PanelRecorrido extends JPanel implements ActionListener {
             } else {
                 System.out.println("Error");
             }
+
+            selectorBus.actualizarBuses(busDisponible); // Actualizar el contenido del panel SelectorBus
         }
     }
 }

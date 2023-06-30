@@ -8,5 +8,7 @@ public class AsientoVIP extends Asiento {
     public int getPrecio(){
         return precio;
     }
-
+    public String getTipo(){
+        return "Asiento VIP";
+    }
 }

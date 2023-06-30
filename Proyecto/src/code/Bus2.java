@@ -38,4 +38,7 @@ public class Bus2 extends Bus{
     public String getHorario(){
         return horario;
     }
+    public int tipo(){
+        return 2;
+    }
 }

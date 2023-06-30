@@ -8,4 +8,7 @@ public class AsientoPremium extends Asiento {
     public int getPrecio(){
         return precio;
     }
+    public String getTipo(){
+        return "Asiento premium";
+    }
 }

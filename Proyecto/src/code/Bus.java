@@ -24,6 +24,7 @@ public abstract class Bus {
     public abstract Recorridos getOrigen();
     public abstract Recorridos getDestino();
     public abstract String getHorario();
+    public abstract int tipo();
 
 
 }

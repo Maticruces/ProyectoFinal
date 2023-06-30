@@ -1,8 +1,8 @@
 package code;
-public class Asiento {
+public abstract class Asiento {
     private boolean status;
     private int serie;
-    private int tipo;
+    private String tipo;
     public Asiento(){
     }
     public void setSerie(int serie){
@@ -21,5 +21,6 @@ public class Asiento {
             status = true;
         }
     }
+    public abstract String getTipo();
 
 }

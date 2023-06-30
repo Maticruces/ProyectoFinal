@@ -8,4 +8,7 @@ public class AsientoNormal extends Asiento {
     public int getPrecio(){
         return precio;
     }
+    public String getTipo(){
+        return "Asiento normal";
+    }
 }

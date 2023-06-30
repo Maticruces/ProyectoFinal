@@ -1,6 +1,6 @@
 package GUI;
 
-import code.*;
+import code.Bus;
 import code.BusDisponible;
 import code.Comprador;
 
@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * El SelectorBus es una clase que representa el panel de selección de bus.
+ */
 public class SelectorBus extends JPanel implements ActionListener {
     private JComboBox<String> comboBox;
     private JButton button;
@@ -15,6 +18,11 @@ public class SelectorBus extends JPanel implements ActionListener {
     private Comprador comprador;
     private Bus busElegido;
 
+    /**
+     * Crea un nuevo SelectorBus con los buses disponibles y el comprador asociados.
+     * @param busDisponible los buses disponibles
+     * @param comprador el comprador asociado
+     */
     public SelectorBus(BusDisponible busDisponible, Comprador comprador) {
         this.busDisponible = busDisponible;
         this.comprador = comprador;
@@ -33,6 +41,10 @@ public class SelectorBus extends JPanel implements ActionListener {
         add(button);
     }
 
+    /**
+     * Maneja el evento de acción.
+     * @param e el evento de acción
+     */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
             int selectedIndex = comboBox.getSelectedIndex();
@@ -57,6 +69,10 @@ public class SelectorBus extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Actualiza la lista de buses disponibles.
+     * @param busDisponible los buses disponibles
+     */
     public void actualizarBuses(BusDisponible busDisponible) {
         busDisponible.filtrarBuses(comprador.getOrigenElegido(), comprador.getDestinoElegido(), comprador.getHorarioElegido());
         System.out.println(busDisponible.getBusesDisponibles().size());

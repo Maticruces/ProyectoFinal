@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * El PanelRecorrido es una clase que representa el panel de selección de recorrido y horario.
+ */
 public class PanelRecorrido extends JPanel implements ActionListener {
     private JComboBox<Recorridos> origenComboBox;
     private JComboBox<Recorridos> destinoComboBox;
@@ -17,6 +20,12 @@ public class PanelRecorrido extends JPanel implements ActionListener {
     private BusDisponible busDisponible;
     private SelectorBus selectorBus;
 
+    /**
+     * Crea un nuevo PanelRecorrido con el comprador, los buses disponibles y el selector de bus asociados.
+     * @param comprador el comprador asociado al panel
+     * @param busDisponible los buses disponibles
+     * @param selectorBus el selector de bus asociado
+     */
     public PanelRecorrido(Comprador comprador, BusDisponible busDisponible, SelectorBus selectorBus) {
         this.comprador = comprador;
         this.busDisponible = busDisponible;
@@ -46,12 +55,16 @@ public class PanelRecorrido extends JPanel implements ActionListener {
         horarioComboBox.addItem("Salida: 17:00 - Llegada: 19:00");
         add(horarioComboBox);
 
-        buscar = new JButton("buscar");
+        buscar = new JButton("Buscar");
         horarioComboBox.setSelectedIndex(-1);
         buscar.addActionListener(this);
         add(buscar);
     }
 
+    /**
+     * Maneja el evento de acción.
+     * @param e el evento de acción
+     */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == origenComboBox) {
             comprador.setOrigen((Recorridos) origenComboBox.getSelectedItem());
@@ -82,8 +95,6 @@ public class PanelRecorrido extends JPanel implements ActionListener {
             System.out.println(comprador.getOrigenElegido());
             System.out.println(comprador.getDestinoElegido());
             System.out.println(comprador.getHorarioElegido());
-
-
 
             if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado == Recorridos.CONCEPCION && destinoSeleccionado == Recorridos.VALPARAISO) {
                 System.out.println("Correcto");

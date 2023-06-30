@@ -1,18 +1,24 @@
 package GUI;
+
 import code.*;
 
 import java.awt.*;
 import javax.swing.JPanel;
 
-/*
-*@Panel es una clase que interactua con la ventana
-del expendedor.
-*/
-
+/**
+ * El Panel es una clase que interactúa con la ventana del expendedor.
+ */
 public class Panel extends JPanel{
     private PanelRecorrido pr;
     private SelectorBus bus;
     private BusDisponible busDisponible;
+
+    /**
+     * Crea un nuevo Panel con el tamaño especificado, el comprador y los buses disponibles.
+     * @param Tamano el tamaño del panel
+     * @param comprador el comprador asociado al panel
+     * @param busDisponible los buses disponibles
+     */
     public Panel(int Tamano, Comprador comprador, BusDisponible busDisponible){
         super();
         setLayout(null);
@@ -29,8 +35,13 @@ public class Panel extends JPanel{
         pr.setBounds(0,0,700,50);
         bus.setBounds(0,50,700,900);
     }
+
+    /**
+     * Sobrescribe el método paint para personalizar la apariencia del panel.
+     * @param g el objeto Graphics para dibujar en el panel
+     */
     public void paint(Graphics g){
         super.paint(g);
-
+        // Personalizar la apariencia del panel
     }
 }

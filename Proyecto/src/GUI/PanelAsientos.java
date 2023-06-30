@@ -1,14 +1,25 @@
 package GUI;
+
 import code.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * El PanelAsientos es una clase que representa el panel de visualización y selección de asientos en un bus.
+ */
 public class PanelAsientos extends JPanel {
     private JButton[] botones;
     private Bus busElegido;
     private Comprador comprador;
+
+    /**
+     * Crea un nuevo PanelAsientos con el número de asientos especificado, el bus elegido y el comprador asociado.
+     * @param n el número de asientos a mostrar
+     * @param busElegido el bus seleccionado
+     * @param comprador el comprador asociado al panel
+     */
     public PanelAsientos(int n, Bus busElegido, Comprador comprador){
         this.busElegido = busElegido;
         this.comprador = comprador;
@@ -49,27 +60,37 @@ public class PanelAsientos extends JPanel {
             }
         }
     }
+
+    /**
+     * El BotonListener es una clase interna que implementa ActionListener para manejar los eventos de los botones de asiento.
+     */
     private class BotonListener implements ActionListener {
         private int botonIndex;
         private boolean ocupado;
 
+        /**
+         * Crea un nuevo BotonListener con el índice del botón asociado.
+         * @param index el índice del botón
+         */
         public BotonListener(int index) {
             botonIndex = index;
             busElegido.getAsiento(botonIndex).cambiarStatus();
             ocupado = busElegido.getAsiento(botonIndex).getStatus();
         }
 
+        /**
+         * Maneja el evento de clic en el botón de asiento.
+         * @param e el evento de acción
+         */
         public void actionPerformed(ActionEvent e) {
             ocupado = !ocupado;
             if (ocupado) {
                 if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento normal")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoNormalDisponible.png"));
                     comprador.removeAsientosElegido(busElegido.getAsiento(botonIndex));
-
                 } else if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento premium")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoPremiumDisponible.png"));
                     comprador.removeAsientosElegido(busElegido.getAsiento(botonIndex));
-
                 } else if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento VIP")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoVIPDisponible.png"));
                     comprador.removeAsientosElegido(busElegido.getAsiento(botonIndex));
@@ -87,9 +108,14 @@ public class PanelAsientos extends JPanel {
                 }
             }
         }
-
     }
+
+    /**
+     * Sobrescribe el método paint para personalizar la apariencia del panel.
+     * @param g el objeto Graphics para dibujar en el panel
+     */
     public void paint(Graphics g){
         super.paint(g);
+        // Personalizar la apariencia del panel
     }
 }

@@ -36,11 +36,9 @@ public class Ventana extends JFrame {
     public void crearGUI() {
         Panel panel = new Panel(escala, comprador, buses);
         add(panel);
-        setBounds(0,0,700,600);
-        panel.setBounds(0,0,700,90);
-        PanelAsientosBus asientosBus = new PanelAsientosBus(comprador, buses);
-        add(asientosBus);
-        asientosBus.setBounds(0,100,700,900);
+        setBounds(0,0,900,900);
+        panel.setBounds(0,0,700,900);
+
 
 
     }

@@ -13,18 +13,19 @@ public class SelectorBus extends JPanel implements ActionListener {
     private JButton button;
     private BusDisponible busDisponible;
     private Comprador comprador;
+    private Bus busElegido;
 
     public SelectorBus(BusDisponible busDisponible, Comprador comprador) {
         this.busDisponible = busDisponible;
         this.comprador = comprador;
         busDisponible.filtrarBuses(comprador.getOrigenElegido(), comprador.getDestinoElegido(), comprador.getHorarioElegido());
 
-        String[] busNames = new String[busDisponible.getBusesDisponibles().size()];
+        String[] busNombre = new String[busDisponible.getBusesDisponibles().size()];
         for (int i = 0; i < busDisponible.getBusesDisponibles().size(); i++) {
-            busNames[i] = "Bus " + (i + 1);
+            busNombre[i] = "Bus " + (i + 1);
         }
 
-        comboBox = new JComboBox<>(busNames);
+        comboBox = new JComboBox<>(busNombre);
         add(comboBox);
 
         button = new JButton("Seleccionar");
@@ -37,12 +38,12 @@ public class SelectorBus extends JPanel implements ActionListener {
             int selectedIndex = comboBox.getSelectedIndex();
             if (selectedIndex >= 0 && selectedIndex < busDisponible.getBusesDisponibles().size()) {
                 // Hacer algo con el bus seleccionado
-                Bus selectedBus = busDisponible.getBusDisponible(selectedIndex);
-                System.out.println("Bus seleccionado: " + selectedBus);
+                busElegido = busDisponible.getBusDisponible(selectedIndex);
+                System.out.println("Bus seleccionado: " + busElegido);
 
-                if(selectedBus != null){
+                if(busElegido != null){
                     this.setLayout(null);
-                    PanelAsientosBus asientosBus = new PanelAsientosBus(comprador, busDisponible);
+                    PanelAsientosBus asientosBus = new PanelAsientosBus(comprador, busDisponible, busElegido);
                     this.add(asientosBus);
                     asientosBus.setBounds(0,100,700,900);
                     revalidate();

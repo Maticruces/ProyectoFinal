@@ -1,5 +1,5 @@
 package GUI;
-
+import code.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class PanelAsientos extends JPanel {
     private JButton[] botones;
 
-    public PanelAsientos(int n){
+    public PanelAsientos(int n, Bus busElegido){
         setLayout(new GridLayout(6, 2));
         botones = new JButton[24];
         for (int i = n; i < n+12; i++) {

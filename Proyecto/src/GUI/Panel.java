@@ -19,16 +19,13 @@ public class Panel extends JPanel{
         setBounds(0, 0, 4*Tamano, 3*Tamano);
         this.setBackground(Color.white);
 
-        SelectorBus bus = new SelectorBus(busDisponible, comprador);
+        this.bus = new SelectorBus(busDisponible, comprador);
         pr = new PanelRecorrido(comprador, busDisponible, bus);
         this.busDisponible = busDisponible;
-        //Bus[] buses = new Bus[2];
         add(pr);
         add(bus);
+
         this.setBounds(0,0,700,900);
-        //PanelAsientosBus asientosBus = new PanelAsientosBus(comprador, busDisponible);
-        //this.add(asientosBus);
-        //asientosBus.setBounds(0,100,700,900);
         pr.setBounds(0,0,700,50);
         bus.setBounds(0,50,700,900);
     }

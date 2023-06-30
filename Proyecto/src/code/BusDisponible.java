@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class BusDisponible {
     private ArrayList<Bus> buses;
+    private ArrayList<Bus> busesDisponibles;
 
     public BusDisponible(){
         Horarios horario = new Horarios();
@@ -25,6 +26,9 @@ public class BusDisponible {
     public void addBus(Bus bus){
         buses.add(bus);
     }
+    public void addBusDisponible(Bus bus){
+        busesDisponibles.add(bus);
+    }
     public Bus getBus(int indice){
         if (indice >= 0 && indice < buses.size()) {
             return buses.get(indice);
@@ -33,5 +37,17 @@ public class BusDisponible {
         }
     }
 
+    public void filtrarBuses(Recorridos origenElegido, Recorridos destinoElegido, String horarioElegido){
+        busesDisponibles = new ArrayList<>();
+        for (int i = 0; i < buses.size(); i++) {
+            if (buses.get(i).getOrigen() == origenElegido && buses.get(i).getDestino() == destinoElegido && buses.get(i).getHorario() == horarioElegido ){
+                addBusDisponible(buses.get(i));
+            }
+        }
+    }
+
+    public ArrayList<Bus> getBusesDisponibles(){
+        return busesDisponibles;
+    }
 
 }

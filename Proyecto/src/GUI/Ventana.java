@@ -10,14 +10,16 @@ import javax.swing.*;
 y esta las pone en funcionamiento.
 */
 
-public class Ventana extends JFrame{
+public class Ventana extends JFrame {
     private Panel P;
     private int escala;
+    private Comprador comprador;
+    private BusDisponible buses;
 
     public Ventana() {
         super();
         escala = 160; //con 160 es 640x480 con 240 es 960x720 con 320 es 1280x960
-
+        comprador = new Comprador();
         setSize(4 * escala, 3 * escala); //tamaño fijo de 4:3
         setTitle("Simulador de buses");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -30,11 +32,11 @@ public class Ventana extends JFrame{
     }
 
     public void crearGUI() {
-        Panel panel = new Panel(escala);
+        Panel panel = new Panel(escala, comprador, buses);
         add(panel);
         setBounds(0,0,700,600);
         panel.setBounds(0,0,700,90);
-        PanelAsientosBus asientosBus = new PanelAsientosBus();
+        PanelAsientosBus asientosBus = new PanelAsientosBus(comprador, buses);
         add(asientosBus);
         asientosBus.setBounds(0,100,700,900);
 

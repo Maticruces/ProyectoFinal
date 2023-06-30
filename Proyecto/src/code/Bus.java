@@ -2,8 +2,9 @@ package code;
 
 import java.util.ArrayList;
 
-public class Bus {
+public abstract class Bus {
     private ArrayList<Asiento> asientosBus;
+
 
     public Bus(){
         asientosBus = new ArrayList<Asiento>();
@@ -19,6 +20,10 @@ public class Bus {
             return null;
         }
     }
+
+    public abstract Recorridos getOrigen();
+    public abstract Recorridos getDestino();
+    public abstract String getHorario();
 
 
 }

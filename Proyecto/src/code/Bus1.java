@@ -27,4 +27,16 @@ public class Bus1 extends Bus{
             addAsiento(asientito);
         }
     }
+
+    public Recorridos getOrigen(){
+        return origen;
+    }
+    public Recorridos getDestino(){
+        return destino;
+    }
+
+    public String getHorario(){
+        return horario;
+    }
+
 }

@@ -27,6 +27,9 @@ public abstract class Bus {
     public abstract Recorridos getDestino();
     public abstract String getHorario();
     public abstract int tipo();
+    public abstract int precioAsientoNormal();
+    public abstract int precioAsientoPremium();
+    public abstract int precioAsientoVIP();
 
 
 }

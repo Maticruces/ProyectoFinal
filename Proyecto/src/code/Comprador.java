@@ -11,9 +11,16 @@ public class Comprador {
     private Bus busElegido;
     private Asiento asientoElegido;
     private ArrayList<Asiento> asientosElegido;
+    private int numAsientosNormalesElegidos;
+    private int numAsientosPremiumElegidos;
+    private int numAsientosVIPElegidos;
+
 
     public Comprador(){
         asientosElegido = new ArrayList<>();
+        numAsientosNormalesElegidos = 0;
+        numAsientosPremiumElegidos = 0;
+        numAsientosVIPElegidos = 0;
     }
     public void setOrigen(Recorridos origenElegido){
         this.origenElegido = origenElegido;
@@ -71,6 +78,31 @@ public class Comprador {
         return asientosElegido;
     }
 
+    public void numAsientosElegidos(){
+        for (int i = 0; i < getAsientosElegidos().size(); i++) {
+            if (asientosElegido.get(i).getTipo() == "Asiento normal"){
+                numAsientosNormalesElegidos++;
+            } else if (asientosElegido.get(i).getTipo() == "Asiento premium") {
+                numAsientosPremiumElegidos++;
+            } else if (asientosElegido.get(i).getTipo() == "Asiento VIP") {
+                numAsientosVIPElegidos++;
+            }
+        }
+    }
+    public void resetNumAsientosElegidos(){
+        numAsientosNormalesElegidos = 0;
+        numAsientosPremiumElegidos = 0;
+        numAsientosVIPElegidos = 0;
+    }
 
+    public int getNumAsientosNormalesElegidos(){
+        return numAsientosNormalesElegidos;
+    }
+    public int getNumAsientosPremiumElegidos(){
+        return numAsientosPremiumElegidos;
+    }
+    public int getNumAsientosVIPElegidos(){
+        return numAsientosVIPElegidos;
+    }
 
 }

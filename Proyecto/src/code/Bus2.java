@@ -6,11 +6,17 @@ public class Bus2 extends Bus{
     private Recorridos origen;
     private Recorridos destino;
     private String horario;
+    private int precioAsientoNormal;
+    private int precioAsientoPremium;
+    private int precioAsientoVIP;
 
     public Bus2(Recorridos origen, Recorridos destino, String horario){
         this.origen = origen;
         this.destino = destino;
         this.horario = horario;
+        precioAsientoNormal = 1500;
+        precioAsientoPremium = 2500;
+        precioAsientoVIP = 4000;
     }
 
     public void agregarAsientos(){
@@ -40,5 +46,14 @@ public class Bus2 extends Bus{
     }
     public int tipo(){
         return 2;
+    }
+    public int precioAsientoNormal(){
+        return precioAsientoNormal;
+    }
+    public int precioAsientoPremium() {
+        return precioAsientoPremium;
+    }
+    public int precioAsientoVIP(){
+        return precioAsientoVIP;
     }
 }

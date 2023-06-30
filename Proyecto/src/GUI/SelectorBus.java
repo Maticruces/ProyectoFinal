@@ -1,6 +1,6 @@
 package GUI;
 
-import code.Bus;
+import code.*;
 import code.BusDisponible;
 import code.Comprador;
 

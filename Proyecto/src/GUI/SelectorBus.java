@@ -45,12 +45,15 @@ public class SelectorBus extends JPanel implements ActionListener {
                     PanelAsientosBus asientosBus = new PanelAsientosBus(comprador, busDisponible);
                     this.add(asientosBus);
                     asientosBus.setBounds(0,100,700,900);
+                    revalidate();
+                    repaint();
                 }
 
             } else {
                 System.out.println("No se ha seleccionado un bus válido.");
             }
         }
+
     }
 
     public void actualizarBuses(BusDisponible busDisponible) {

@@ -1,0 +1,257 @@
+[33mcommit 63e24e5c4d24ea58a8568949e342dac7486b5b48[m[33m ([m[1;36mHEAD -> [m[1;32mPrueba-de-funciones[m[33m, [m[1;31morigin/Prueba-de-funciones[m[33m)[m
+Merge: a83859f 2d148ce
+Author: c4milot <119006528+c4milot@users.noreply.github.com>
+Date:   Fri Jun 30 18:20:47 2023 -0400
+
+    Merge branch 'main' into Prueba-de-funciones
+
+[33mcommit a83859ff7e137c87102f171a1431a5cb00f84fd0[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 13:55:37 2023 -0400
+
+    Actualizacion de clases, se añade verificacion grafica
+    
+    Falta hacer que se reseteen los valores luego de comprar o cancelar
+
+[33mcommit 8b790b972cc17eb52e015fb266558e3a24d118c5[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 12:19:41 2023 -0400
+
+    Update PanelAsientos y Comprador
+
+[33mcommit 127b720cc2c3eaad535abc5be2c82e56fd2d20e5[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 09:47:42 2023 -0400
+
+    Update clase Asientos, se representa correctamente el estado
+    
+    falta agregar funcionalidad boton confirmar
+
+[33mcommit 1c6537230c6fe151ba65f70fc8c4bbb0a271c6c2[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 08:07:26 2023 -0400
+
+    Limpieza codigo
+
+[33mcommit be0f508f4b229404653ecaf74786599f063ba88c[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 11:58:42 2023 -0400
+
+    Bug fixing
+
+[33mcommit 2e472c1a2fd8852848bb074d96a1dffc5f261b4a[m
+Merge: d00804c ac329a5
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 07:49:50 2023 -0400
+
+    Merge branch 'Prueba-de-funciones' of https://github.com/Maticruces/ProyectoFinal into Prueba-de-funciones
+
+[33mcommit ac329a5b5e6b1daa43eb6da50c10412186fe6d9f[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 11:31:00 2023 -0400
+
+    Update SelectorBus se soluciona bug
+
+[33mcommit 7abd4c23723d100eca5b91a702b1f3ccf088bbd6[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 11:13:30 2023 -0400
+
+    Actualizacion interfaz grafica
+    
+    Hay un pequeño bug, no se ven los asientos hasta pasar el cursor sobre ellos
+
+[33mcommit d00804c75f43ae9070dc164421c7aed3669e1e83[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Fri Jun 30 07:49:47 2023 -0400
+
+    Update se agregan metodos get tipo a asientos, Asiento se cambia a abstract
+
+[33mcommit c6fda96f18df03c962dfea7e0fd43012f0b8c922[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Thu Jun 29 23:47:58 2023 -0400
+
+    Update clase SelectorBus
+
+[33mcommit d809c4a1cfc93ce2fb84bfc06d775ae2896e2de8[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Thu Jun 29 22:51:33 2023 -0400
+
+    Update de clase Bus se convierte a abastract, se actualizan clases relacionadas a buses
+
+[33mcommit 4045c142a84f1a1195e66ef3cd2cdebaecc17085[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Thu Jun 29 19:45:19 2023 -0400
+
+    Update PanelComprador
+
+[33mcommit d4263e214ed1e15cd2be8fb349cee7c9464d32f5[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Thu Jun 29 19:20:58 2023 -0400
+
+    Creacion clase Horarios y bus2, actualizacion clase BusDisponible
+
+[33mcommit 2f93c48b3e49f3ac4adc105b4f5ad0afb9ecf20c[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Thu Jun 29 18:40:14 2023 -0400
+
+    Upadate PanelRecorrido
+
+[33mcommit 2d148ce7803d1575e330113e04a5dab866c04240[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 585ae77 bbb5ae5
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Wed Jun 28 22:58:20 2023 -0400
+
+    Merge pull request #2 from Maticruces/Comprobaciones
+    
+    Funciones echas a partir de fragmentos de tarea2
+
+[33mcommit 4c15208ebfc3840cb08bbc9f88c25dbf8818c0e7[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Wed Jun 28 00:41:30 2023 -0400
+
+    Creacion de clase BusesDisponible y Recorridos
+
+[33mcommit b039dab2ba36c7faf1576aecb2612ecd0e6145fa[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Tue Jun 27 09:11:10 2023 -0400
+
+    Update PanelRecorrido.java
+
+[33mcommit a620063a57c4a844dc953c51d2533d62920c78a8[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Tue Jun 27 08:04:20 2023 -0400
+
+    Update interfaz grafica, se añaden imagenes de los asientos y las clases PanelAsiento y PanelAsientoBus
+
+[33mcommit 5cfefb91224b71edac1c44b6dd11896f84fe3567[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Mon Jun 26 04:22:56 2023 -0400
+
+    Update Avance en la interfaz grafica y modificaciones a clases Bus
+
+[33mcommit 585ae77e757e1c18b347611bd2c4f29db46decda[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Mon Jun 26 02:46:31 2023 -0400
+
+    Eliminacion de archivo obsoleto
+    
+    Ya pusimos un diagrama de casos de uso en formato png, así que no nos sirve esto ya que solo ocupa espacio y no aporta demasiado al proyecto
+
+[33mcommit bbb5ae59ccb8903c630eda070df7d6a7d856d367[m[33m ([m[1;31morigin/Comprobaciones[m[33m, [m[1;32mComprobaciones[m[33m)[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Mon Jun 26 02:43:05 2023 -0400
+
+    Funciones echas a partir de fragmentos de tarea2
+    
+    Las agregamos por separo por posibles errores en el código original y evitar perder el progreso
+
+[33mcommit 9d7dcca050df84c4b4c354bfdb71af6948596cd3[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Mon Jun 26 02:40:27 2023 -0400
+
+    Agregacion de excepciones
+    
+    Mensajes de error que dará el sistema en distintos casos, para guiar al usuario con ventanas emergentes
+
+[33mcommit 9fe82c9b03015429f3ef824956d1fe5f44aecf74[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Mon Jun 26 02:38:45 2023 -0400
+
+    Agregacion de modificacion de GUI
+    
+    agregación de funciones, con imágenes para cuando se inicie la ventana para ver distribución
+
+[33mcommit e44db935aa628a4b71cfb5c81962399a78d7be31[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Mon Jun 26 02:36:09 2023 -0400
+
+    Eliminacion de directorio
+    
+    se elimina debido a que organizamos de mejor manera en los otros directorios
+
+[33mcommit 398cd0c3af7d508b9720cc2d5d600f96c873fc77[m
+Merge: 1173ba0 35cc57c
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Mon Jun 26 02:34:16 2023 -0400
+
+    Merge pull request #1 from Maticruces/Prueba-de-funciones
+    
+    agregacion de funciones del panel
+
+[33mcommit 35cc57c7896cdb10d9215b7ac8518e809df72096[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Sun Jun 25 04:32:42 2023 -0400
+
+    Update separacion parte logica de gui, se inicia con la creacion de clase bus
+
+[33mcommit 3ef51acfadda754b8bd88d649fed0675953b1ed8[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Tue Jun 20 23:33:27 2023 -0400
+
+    agregacion de funciones del panel
+    
+    algunas funciones sacadas de la tarea 2 y una ligera implementacion del panel grafico
+
+[33mcommit 1173ba0b4df6e1b49cebceaf4b57d36d31458d4a[m
+Author: Camilo Tapia Correa <camilotapiacorrea@gmail.com>
+Date:   Tue Jun 20 12:04:06 2023 -0400
+
+    Update clases Asiento
+
+[33mcommit c12fe3f4164b4784654000c3d42cf711cd19172b[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Tue Jun 20 03:20:21 2023 -0400
+
+    Se agregan clases Asiento
+    
+    Se agregan clases, falta definir algunos metodos
+
+[33mcommit 26b00f8a10535ab6964da70b60d483121706af24[m
+Author: c4milot <camilotapiacorrea@gmail.com>
+Date:   Mon Jun 19 05:01:39 2023 -0400
+
+    Update Diagrama de uso en formato de imagen
+    
+    se agrega diagrama de uso en formato imagen para facilitar su vista
+
+[33mcommit 394a1a7099effa4398ec0866d18611daf0c2db42[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Sun Jun 18 23:38:14 2023 -0400
+
+    Diseño del panel
+    
+    Un diseño para ver como se organizara el panel y donde pondremos los botones para asi reservar asientos
+
+[33mcommit 3740995f72fee5efa5a5922a3beeeca3c8600f8b[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Sun Jun 18 23:33:56 2023 -0400
+
+    diagrama de caso de usos actualizado
+    
+    aun no esta tan completo pero es la base del código que crearemos para la simulación en panel grafico
+
+[33mcommit 56dace21586e8d9027535a01103d2cc6006dcb78[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Mon Jun 12 23:18:48 2023 -0400
+
+    Avance de diagrama de caso de uso
+    
+    Aquí se muestra nuestras ideas sueltas de nuestro proyecto (es para ver que descartar o implementar) , aunque esta propenso a cambios
+
+[33mcommit 2e8ef47ea21cf0b7232868782d646573590c2a81[m
+Author: Maticruces <maticruces2021@inf.udec.cl>
+Date:   Mon Jun 5 21:31:02 2023 -0400
+
+    agregacion de primeras funciones y creacion de la ventana con el nombre de Simulador de buses
+
+[33mcommit 9fb314452e28c3509d16a744bf12cf00849c1070[m
+Author: Maticruces <maticruces2021@inf.udec.cl>
+Date:   Mon May 29 12:39:26 2023 -0400
+
+    ingreso de nombres y modificacion de gitignore
+
+[33mcommit e59c57d9ae373b4b4a9f6f817c27915a1e3e170e[m
+Author: Maticruces <104586656+Maticruces@users.noreply.github.com>
+Date:   Mon May 29 12:29:33 2023 -0400
+
+    Initial commit

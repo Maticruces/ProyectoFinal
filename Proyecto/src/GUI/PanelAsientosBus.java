@@ -13,8 +13,8 @@ public class PanelAsientosBus extends JPanel {
     public PanelAsientosBus(Comprador comprador, BusDisponible buses, Bus busElegido){
         setLayout(null);
         setBackground(Color.white);
-        asientos1 = new PanelAsientos(0, busElegido);
-        asientos2 = new PanelAsientos(12, busElegido);
+        asientos1 = new PanelAsientos(0, busElegido, comprador);
+        asientos2 = new PanelAsientos(12, busElegido, comprador);
 
         asientos1.setBounds(0,0,100,370);
         add(asientos1);

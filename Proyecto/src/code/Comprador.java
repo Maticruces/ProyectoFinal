@@ -1,5 +1,6 @@
 package code;
 
+import java.util.ArrayList;
 import java.util.SplittableRandom;
 
 public class Comprador {
@@ -9,8 +10,10 @@ public class Comprador {
     private Recorridos origenElegido;
     private Bus busElegido;
     private Asiento asientoElegido;
+    private ArrayList<Asiento> asientosElegido;
 
     public Comprador(){
+        asientosElegido = new ArrayList<>();
     }
     public void setOrigen(Recorridos origenElegido){
         this.origenElegido = origenElegido;
@@ -45,6 +48,27 @@ public class Comprador {
     }
     public Asiento getAsientoElegido(){
         return asientoElegido;
+    }
+    public void addAsientosElegido(Asiento asiento){
+        if(asiento != null) {
+            asientosElegido.add(asiento);
+        }
+    }
+    public void removeAsientosElegido(Asiento asiento){
+        if(asiento != null) {
+            asientosElegido.remove(asiento);
+        }
+    }
+
+    public Asiento getAsientosElegido(int indice) {
+        if (indice >= 0 && indice < asientosElegido.size()) {
+            return asientosElegido.get(indice);
+        } else {
+            return null;
+        }
+    }
+    public ArrayList<Asiento> getAsientosElegidos(){
+        return asientosElegido;
     }
 
 

@@ -8,8 +8,10 @@ import java.awt.event.ActionListener;
 public class PanelAsientos extends JPanel {
     private JButton[] botones;
     private Bus busElegido;
-    public PanelAsientos(int n, Bus busElegido){
+    private Comprador comprador;
+    public PanelAsientos(int n, Bus busElegido, Comprador comprador){
         this.busElegido = busElegido;
+        this.comprador = comprador;
 
         setLayout(new GridLayout(6, 2));
         botones = new JButton[24];
@@ -62,20 +64,26 @@ public class PanelAsientos extends JPanel {
             if (ocupado) {
                 if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento normal")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoNormalDisponible.png"));
+                    comprador.removeAsientosElegido(busElegido.getAsiento(botonIndex));
 
                 } else if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento premium")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoPremiumDisponible.png"));
+                    comprador.removeAsientosElegido(busElegido.getAsiento(botonIndex));
 
                 } else if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento VIP")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoVIPDisponible.png"));
+                    comprador.removeAsientosElegido(busElegido.getAsiento(botonIndex));
                 }
             } else {
                 if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento normal")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoNormalOcupado.png"));
+                    comprador.addAsientosElegido(busElegido.getAsiento(botonIndex));
                 } else if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento premium")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoPremiumOcupado.png"));
+                    comprador.addAsientosElegido(busElegido.getAsiento(botonIndex));
                 } else if (busElegido.getAsiento(botonIndex).getTipo().equals("Asiento VIP")) {
                     botones[botonIndex].setIcon(new ImageIcon("Proyecto/src/imagenes/asientoVIPOcupado.png"));
+                    comprador.addAsientosElegido(busElegido.getAsiento(botonIndex));
                 }
             }
         }

@@ -1,32 +1,25 @@
 package code;
-
-import javax.swing.*;
-
-public abstract class Asiento extends JPanel{
-    private int numSerie;
-    private int x, y, Tamano;
-    private JButton JB;
-    public Asiento(int numSerie, int x, int y, int escala){
-        this.numSerie = numSerie;
-        this.x = x;this.y = y;
-        this.Tamano = escala;
+public abstract class Asiento {
+    private boolean status;
+    private int serie;
+    private String tipo;
+    public Asiento(){
+    }
+    public void setSerie(int serie){
+        this.serie = serie;
     }
     public int getSerie(){
-        return numSerie;
+        return serie;
     }
-    public void changeLocation(int x,int y){
-        this.x = x;this.y = y;
+    public boolean getStatus(){
+        return status;
     }
-    public void setJButton(JButton act){
-        JB = act;
+    public void cambiarStatus(){
+        if(status){
+            status = false;
+        }else {
+            status = true;
+        }
     }
-    public int getx(){
-        return x;
-    }
-    public int gety(){
-        return y;
-    }
-    public int getTamano(){
-        return Tamano;
-    }
+    public abstract String getTipo();
 }

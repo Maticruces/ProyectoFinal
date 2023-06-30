@@ -2,10 +2,12 @@ package code;
 public class AsientoPremium extends Asiento {
     private int precio;
 
-    public AsientoPremium(int precio, int x, int y, int escala){
-        super(precio, x, y, escala);
+    public AsientoPremium(int precio){
+        this.precio = precio;
     }
     public int getPrecio(){
         return precio;
     }
-}
+    public String getTipo(){
+        return "Asiento premium";
+    }

@@ -1,0 +1,98 @@
+package GUI;
+
+import code.BusDisponible;
+import code.Comprador;
+import code.Recorridos;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class PanelRecorrido extends JPanel implements ActionListener {
+    private JComboBox<Recorridos> origenComboBox;
+    private JComboBox<Recorridos> destinoComboBox;
+    private JComboBox<String> horarioComboBox;
+    private JButton buscar;
+    private Comprador comprador;
+    private BusDisponible busDisponible;
+    private SelectorBus selectorBus;
+
+    public PanelRecorrido(Comprador comprador, BusDisponible busDisponible, SelectorBus selectorBus) {
+        this.comprador = comprador;
+        this.busDisponible = busDisponible;
+        this.selectorBus = selectorBus;
+
+        JLabel origenLabel = new JLabel("Origen:");
+        add(origenLabel);
+
+        origenComboBox = new JComboBox<>(Recorridos.values());
+        origenComboBox.setSelectedIndex(-1);
+        origenComboBox.addActionListener(this);
+        add(origenComboBox);
+
+        JLabel destinoLabel = new JLabel("Destino:");
+        add(destinoLabel);
+        destinoComboBox = new JComboBox<>(Recorridos.values());
+        destinoComboBox.setSelectedIndex(-1);
+        destinoComboBox.addActionListener(this);
+        add(destinoComboBox);
+
+        JLabel horario = new JLabel("Horario: ");
+        add(horario);
+
+        horarioComboBox = new JComboBox<>();
+        horarioComboBox.addItem("Salida: 13:00 - Llegada: 15:00");
+        horarioComboBox.addItem("Salida: 15:00 - Llegada: 17:00");
+        horarioComboBox.addItem("Salida: 17:00 - Llegada: 19:00");
+        add(horarioComboBox);
+
+        buscar = new JButton("buscar");
+        horarioComboBox.setSelectedIndex(-1);
+        buscar.addActionListener(this);
+        add(buscar);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == origenComboBox) {
+            comprador.setOrigen((Recorridos) origenComboBox.getSelectedItem());
+            comprador.setDestino((Recorridos) destinoComboBox.getSelectedItem());
+
+            Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
+            Recorridos destinoSeleccionado = (Recorridos) destinoComboBox.getSelectedItem();
+
+            if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado.equals(destinoSeleccionado)) {
+                destinoComboBox.setSelectedIndex(-1);
+            }
+        } else if (e.getSource() == destinoComboBox) {
+            comprador.setDestino((Recorridos) destinoComboBox.getSelectedItem());
+
+            Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
+            Recorridos destinoSeleccionado = (Recorridos) destinoComboBox.getSelectedItem();
+            if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado.equals(destinoSeleccionado)) {
+                origenComboBox.setSelectedIndex(-1);
+            }
+        } else if (e.getSource() == buscar) {
+            comprador.setOrigen((Recorridos) origenComboBox.getSelectedItem());
+            comprador.setDestino((Recorridos) destinoComboBox.getSelectedItem());
+            // AÑADIR EXCEPCIONES EN CASO DE NULL
+            comprador.setHorario((String) horarioComboBox.getSelectedItem());
+
+            Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
+            Recorridos destinoSeleccionado = (Recorridos) destinoComboBox.getSelectedItem();
+            System.out.println(comprador.getOrigenElegido());
+            System.out.println(comprador.getDestinoElegido());
+            System.out.println(comprador.getHorarioElegido());
+
+
+
+            if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado == Recorridos.CONCEPCION && destinoSeleccionado == Recorridos.VALPARAISO) {
+                System.out.println("Correcto");
+                System.out.println(comprador.getOrigenElegido());
+            } else {
+                System.out.println("Error");
+            }
+
+            selectorBus.actualizarBuses(busDisponible); // Actualizar el contenido del panel SelectorBus
+        }
+    }
+}

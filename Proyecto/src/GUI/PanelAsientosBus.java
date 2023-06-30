@@ -11,6 +11,7 @@ public class PanelAsientosBus extends JPanel {
     private PanelAsientos asientos2;
     private JButton confirmar;
     public PanelAsientosBus(Comprador comprador, BusDisponible buses){
+        System.out.println("FLAGGGGGGG");
         setLayout(null);
         setBackground(Color.white);
         asientos1 = new PanelAsientos(0);

@@ -39,6 +39,14 @@ public class SelectorBus extends JPanel implements ActionListener {
                 // Hacer algo con el bus seleccionado
                 Bus selectedBus = busDisponible.getBusDisponible(selectedIndex);
                 System.out.println("Bus seleccionado: " + selectedBus);
+
+                if(selectedBus != null){
+                    this.setLayout(null);
+                    PanelAsientosBus asientosBus = new PanelAsientosBus(comprador, busDisponible);
+                    this.add(asientosBus);
+                    asientosBus.setBounds(0,100,700,900);
+                }
+
             } else {
                 System.out.println("No se ha seleccionado un bus válido.");
             }

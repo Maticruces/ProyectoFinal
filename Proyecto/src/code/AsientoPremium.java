@@ -11,4 +11,3 @@ public class AsientoPremium extends Asiento {
     public String getTipo(){
         return "Asiento premium";
     }
-}

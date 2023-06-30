@@ -8,7 +8,9 @@ public abstract class Bus {
 
     public Bus(){
         asientosBus = new ArrayList<Asiento>();
+        agregarAsientos();
     }
+    public abstract void agregarAsientos();
     public void addAsiento(Asiento asiento){
         asientosBus.add(asiento);
     }

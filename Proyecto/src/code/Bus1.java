@@ -14,6 +14,7 @@ public class Bus1 extends Bus{
     }
 
     public void agregarAsientos(){
+
         for (int i = 0; i < 14; i++) {
             AsientoNormal asientito = new AsientoNormal(1000);
             addAsiento(asientito);

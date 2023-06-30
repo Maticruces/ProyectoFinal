@@ -12,12 +12,13 @@ public class BusDisponible {
 
         for (Recorridos origen:Recorridos.values()) {
             for (Recorridos destino : Recorridos.values()) {
-                for (int i = 1; i < 4 ; i++) {
-                    Bus1 bus1 = new Bus1(origen, destino, (horario.Horario(i)));
-                    addBus(bus1);
-                    Bus2 bus2 = new Bus2(origen, destino, (horario.Horario(i)));
-                    addBus(bus2);
-
+                if(origen != destino) {
+                    for (int i = 1; i < 4; i++) {
+                        Bus1 bus1 = new Bus1(origen, destino, (horario.Horario(i)));
+                        addBus(bus1);
+                        Bus2 bus2 = new Bus2(origen, destino, (horario.Horario(i)));
+                        addBus(bus2);
+                    }
                 }
             }
         }

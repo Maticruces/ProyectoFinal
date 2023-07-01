@@ -12,6 +12,7 @@ public class AsientoVIP extends Asiento {
      * @param precio el precio del asiento VIP
      */
     public AsientoVIP(int precio) {
+        super("Asiento normal");
         this.precio = precio;
     }
 

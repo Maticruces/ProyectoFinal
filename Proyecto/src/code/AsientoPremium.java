@@ -12,6 +12,7 @@ public class AsientoPremium extends Asiento {
      * @param precio el precio del asiento premium
      */
     public AsientoPremium(int precio) {
+        super("Asiento normal");
         this.precio = precio;
     }
 

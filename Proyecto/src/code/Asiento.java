@@ -11,7 +11,7 @@ public abstract class Asiento {
     /**
      * Constructor por defecto de la clase Asiento.
      */
-    public Asiento() {
+    public Asiento(String s) {
     }
 
     /**

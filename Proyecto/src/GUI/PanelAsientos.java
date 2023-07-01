@@ -66,7 +66,7 @@ public class PanelAsientos extends JPanel {
     /**
      * El BotonListener es una clase interna que implementa ActionListener para manejar los eventos de los botones de asiento.
      */
-    private class BotonListener implements ActionListener {
+    class BotonListener implements ActionListener {
         private int botonIndex;
         private boolean ocupado;
 

@@ -12,6 +12,7 @@ public class AsientoNormal extends Asiento {
      * @param precio el precio del asiento normal
      */
     public AsientoNormal(int precio) {
+        super("Asiento normal");
         this.precio = precio;
     }
 

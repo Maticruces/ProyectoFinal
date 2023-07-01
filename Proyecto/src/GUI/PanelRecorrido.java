@@ -92,16 +92,9 @@ public class PanelRecorrido extends JPanel implements ActionListener {
 
             Recorridos origenSeleccionado = (Recorridos) origenComboBox.getSelectedItem();
             Recorridos destinoSeleccionado = (Recorridos) destinoComboBox.getSelectedItem();
-            System.out.println(comprador.getOrigenElegido());
-            System.out.println(comprador.getDestinoElegido());
-            System.out.println(comprador.getHorarioElegido());
-
-            if (origenSeleccionado != null && destinoSeleccionado != null && origenSeleccionado == Recorridos.CONCEPCION && destinoSeleccionado == Recorridos.VALPARAISO) {
-                System.out.println("Correcto");
-                System.out.println(comprador.getOrigenElegido());
-            } else {
-                System.out.println("Error");
-            }
+            System.out.println("Origen: " +comprador.getOrigenElegido());
+            System.out.println("Destino: " + comprador.getDestinoElegido());
+            System.out.println("Horario: " + comprador.getHorarioElegido());
 
             selectorBus.actualizarBuses(busDisponible); // Actualizar el contenido del panel SelectorBus
         }

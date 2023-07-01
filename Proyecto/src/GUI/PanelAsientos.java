@@ -41,6 +41,7 @@ public class PanelAsientos extends JPanel {
                 } else if (busElegido.getAsiento(i).getTipo() == "Asiento premium") {
                     if(busElegido.getAsiento(i).getStatus()) {
                         botones[i] = new JButton(new ImageIcon("Proyecto/src/imagenes/asientoPremiumOcupado.png"));
+                        botones[i].setEnabled(false);
                     }else{
                         botones[i] = new JButton(new ImageIcon("Proyecto/src/imagenes/asientoPremiumDisponible.png"));
                     }
@@ -50,6 +51,7 @@ public class PanelAsientos extends JPanel {
                 } else if (busElegido.getAsiento(i).getTipo() == "Asiento VIP") {
                     if(busElegido.getAsiento(i).getStatus()) {
                         botones[i] = new JButton(new ImageIcon("Proyecto/src/imagenes/asientoVIPOcupado.png"));
+                        botones[i].setEnabled(false);
                     }else{
                         botones[i] = new JButton(new ImageIcon("Proyecto/src/imagenes/asientoVIPDisponible.png"));
                     }

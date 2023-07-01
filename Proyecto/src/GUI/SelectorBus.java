@@ -75,7 +75,6 @@ public class SelectorBus extends JPanel implements ActionListener {
      */
     public void actualizarBuses(BusDisponible busDisponible) {
         busDisponible.filtrarBuses(comprador.getOrigenElegido(), comprador.getDestinoElegido(), comprador.getHorarioElegido());
-        System.out.println(busDisponible.getBusesDisponibles().size());
         this.busDisponible = busDisponible;
         String[] busNames = new String[busDisponible.getBusesDisponibles().size()];
         for (int i = 0; i < busDisponible.getBusesDisponibles().size(); i++) {
